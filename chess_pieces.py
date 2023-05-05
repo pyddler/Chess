@@ -87,7 +87,7 @@ class CPawn(CPiece):
 
         direction = [(0,vertical),(-1,vertical),(1,vertical)]
         if(self.is_first_move()):
-            direction.append((0,vertical*2)) # adding double hop
+            direction.append((0,vertical*2)) # adding double jump
         direction = tuple(direction)
         return super().possible_move(direction,steps=1)
 
@@ -111,7 +111,7 @@ class CKnight(CPiece):
 
 class CBishop(CPiece):
     def possible_move(self):
-        direction = ((1,1),(-1,1),(1,-1),(-1,-1)) #(R=1/L=-1/HOLD=0,U=1/D=-1/H=0)
+        direction = ((1,1),(-1,1),(1,-1),(-1,-1)) #(R=1/L=-1/HOLD=0,U=1/D=-1)
         return super().possible_move(direction)
 
 
@@ -130,7 +130,7 @@ class CKing(CPiece):
         direction = [(1,0),(-1,0),(0,1),(0,-1), \
                 (1,1),(-1,1),(1,-1),(-1,-1)]
         if(self.is_first_move()):
-            direction.append((2,0))  # adding catling possibility
+            direction.append((2,0))  # adding castling possibility
             direction.append((-2,0)) # 
         direction = tuple(direction)
         return super().possible_move(direction,steps=1)
