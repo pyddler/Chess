@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python
 
 import tkinter as tk
 import tkinter.ttk as ttk
